@@ -1,8 +1,8 @@
 ## 简介 ##
 
 ```markdown
-浙政钉（专有钉钉）sdk java 版
-VERSION : 1.0.0
+浙政钉（专有钉钉）sdk java 版 
+VERSION : 1.1.0
 ```
 
 ## 官方文档(需要登录) ##
@@ -37,4 +37,18 @@ public class XXXService {
     }
 
 }
+```
+
+## changelog #
+
+
+### 1.0.0 ###
+```text
+[function] 首次封装
+```
+
+
+### 1.1.0 ###
+```text
+[function] 获取 jsapi_token 时支持使用自行管理的 access_token
 ```

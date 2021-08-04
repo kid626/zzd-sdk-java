@@ -32,7 +32,16 @@ public interface ZwDingBaseService {
     /**
      * 获取 jsapi token，需要开发人员自己管理生命周期
      *
-     * @return access_token
+     * @param accessToken access_token
+     * @return jsapi_token
+     * @throws ZwDingDingException ZwDingDingException
+     */
+    GetTokenResp getJsapiRealToken(String accessToken) throws ZwDingDingException;
+
+    /**
+     * 获取 jsapi token，需要开发人员自己管理生命周期
+     *
+     * @return jsapi_token
      * @throws ZwDingDingException ZwDingDingException
      */
     GetTokenResp getJsapiRealToken() throws ZwDingDingException;
@@ -40,7 +49,16 @@ public interface ZwDingBaseService {
     /**
      * 获取 jsapi token ，已做生命周期管理
      *
-     * @return access_token
+     * @param accessToken access_token
+     * @return jsapi_token
+     * @throws ZwDingDingException ZwDingDingException
+     */
+    String getJsapiToken(String accessToken) throws ZwDingDingException;
+
+    /**
+     * 获取 jsapi token ，已做生命周期管理
+     *
+     * @return jsapi_token
      * @throws ZwDingDingException ZwDingDingException
      */
     String getJsapiToken() throws ZwDingDingException;

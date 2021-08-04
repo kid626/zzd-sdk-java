@@ -83,21 +83,26 @@ public class ZwDingBaseServiceImpl implements ZwDingBaseService {
     }
 
     @Override
-    public GetTokenResp getJsapiRealToken() throws ZwDingDingException {
+    public GetTokenResp getJsapiRealToken(String accessToken) throws ZwDingDingException {
         IntelligentPostClient client = initClient(URLConstant.GET_JSAPI_TOKEN);
         OapiGetJsapiTokenJsonRequest request = new OapiGetJsapiTokenJsonRequest();
-        request.setAccessToken(getAccessToken());
+        request.setAccessToken(accessToken);
         OapiGetJsapiTokenJsonResponse apiResult = client.post(request);
         String data = getData(apiResult);
         return JSONObject.parseObject(data, GetTokenResp.class);
     }
 
     @Override
-    public String getJsapiToken() throws ZwDingDingException {
+    public GetTokenResp getJsapiRealToken() throws ZwDingDingException {
+        return getJsapiRealToken(getAccessToken());
+    }
+
+    @Override
+    public String getJsapiToken(String accessToken) throws ZwDingDingException {
         long curTime = System.currentTimeMillis() / 1000;
         ZwddToken zwddToken = FileUtils.getValue(TokenTypeEnum.JSAPI_TOKEN, config.getAppKey());
         if (zwddToken == null || (curTime - zwddToken.getCreateTime()) >= (zwddToken.getExpiresIn() - TIME_PERIOD)) {
-            GetTokenResp realToken = getJsapiRealToken();
+            GetTokenResp realToken = getJsapiRealToken(accessToken);
             zwddToken = new ZwddToken();
             zwddToken.setAppKey(config.getAppKey());
             zwddToken.setToken(realToken.getAccessToken());
@@ -106,6 +111,11 @@ public class ZwDingBaseServiceImpl implements ZwDingBaseService {
             FileUtils.write2File(zwddToken, TokenTypeEnum.JSAPI_TOKEN);
         }
         return zwddToken.getToken();
+    }
+
+    @Override
+    public String getJsapiToken() throws ZwDingDingException {
+        return getJsapiToken(getAccessToken());
     }
 
     @Override

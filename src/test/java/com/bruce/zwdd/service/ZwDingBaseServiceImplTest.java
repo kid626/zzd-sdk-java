@@ -2,6 +2,7 @@ package com.bruce.zwdd.service;
 
 import com.bruce.zwdd.model.base.AuthUserResp;
 import com.bruce.zwdd.service.impl.ZwDingBaseServiceImpl;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,7 +37,12 @@ public class ZwDingBaseServiceImplTest {
 
     @Test
     public void getJsapiToken() {
-        System.out.println(zwDingBaseService.getJsapiToken());
+        String accessToken = "app_679f4269c6e74c24b7202b02d49b96fe";
+        String jsapiToken1 = zwDingBaseService.getJsapiToken(accessToken);
+        System.out.println(jsapiToken1);
+        String jsapiToken2 = zwDingBaseService.getJsapiToken();
+        System.out.println(jsapiToken2);
+        Assert.assertEquals(jsapiToken1, jsapiToken2);
     }
 
 
