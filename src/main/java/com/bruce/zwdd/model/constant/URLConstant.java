@@ -99,6 +99,11 @@ public class URLConstant {
     public static final String BATCH_GET_ORG_BY_CODES = "/mozi/organization/listOrganizationsByCodes";
 
     /**
+     * 根据组织Code查询组织汇报线
+     */
+    public static final String GET_ORG_LINE = "/mozi/organization/getOrganizationLine";
+
+    /**
      * 分页获取下一级组织
      */
     public static final String PAGE_SUB_ORG_CODES = "/mozi/organization/pageSubOrganizationCodes";

@@ -44,6 +44,14 @@ public interface ZwDingDeptService extends ZwDingBaseService {
     List<ListOrganizationsByCodesResp> listOrganizationsByCodes(ListOrganizationsByCodesReq req);
 
     /**
+     * 根据组织Code查询组织汇报线
+     *
+     * @param organizationCode 组织 code
+     * @return 组织线组织Code列表一条线从当前组织开始，向上一直查找父组织，直到根节点
+     */
+    List<String> getOrganizationLine(String organizationCode);
+
+    /**
      * 分页获取下⼀级组织 Code 列表
      *
      * @param req PageSubOrganizationCodesReq

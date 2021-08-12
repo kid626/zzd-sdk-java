@@ -60,6 +60,14 @@ public class ZwDingDeptServiceImplTest extends ZwDingBaseServiceImplTest {
     }
 
     @Test
+    public void getOrganizationLine() {
+        List<String> list = zwDingDeptService.getOrganizationLine(organizationCode);
+        for (String resp : list) {
+            System.out.println(resp);
+        }
+    }
+
+    @Test
     public void pageSubOrganizationCodes() {
         PageSubOrganizationCodesReq req = new PageSubOrganizationCodesReq();
         req.setOrganizationCode(organizationCode);

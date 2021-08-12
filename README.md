@@ -2,7 +2,7 @@
 
 ```markdown
 浙政钉（专有钉钉）sdk java 版 
-VERSION : 1.1.0
+VERSION : 1.2.0
 ```
 
 ## 官方文档(需要登录) ##
@@ -51,4 +51,9 @@ public class XXXService {
 ### 1.1.0 ###
 ```text
 [function] 获取 jsapi_token 时支持使用自行管理的 access_token
+```
+
+### 1.2.0 ###
+```text
+[function] 添加 根据组织Code查询组织汇报线 接口
 ```

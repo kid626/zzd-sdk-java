@@ -84,6 +84,17 @@ public class ZwDingDeptServiceImpl extends ZwDingBaseServiceImpl implements ZwDi
     }
 
     @Override
+    public List<String> getOrganizationLine(String organizationCode) {
+        IntelligentPostClient client = initClient(URLConstant.GET_ORG_LINE);
+        OapiMoziOrganizationGetOrganizationLineRequest request = new OapiMoziOrganizationGetOrganizationLineRequest();
+        request.setOrganizationCode(organizationCode);
+        request.setTenantId(config.getTenantId());
+        OapiMoziOrganizationGetOrganizationLineResponse apiResult = client.post(request);
+        String data = getData(apiResult);
+        return JSONObject.parseArray(data, String.class);
+    }
+
+    @Override
     public List<String> pageSubOrganizationCodes(PageSubOrganizationCodesReq req) {
         IntelligentPostClient client = initClient(URLConstant.PAGE_SUB_ORG_CODES);
         OapiMoziOrganizationPageSubOrganizationCodesRequest request = new OapiMoziOrganizationPageSubOrganizationCodesRequest();
