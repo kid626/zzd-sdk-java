@@ -1,5 +1,6 @@
 package com.bruce.zwdd.model.msg.req;
 
+import com.bruce.zwdd.enums.MsgTypeEnum;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -12,15 +13,14 @@ import java.io.Serializable;
  * @Author fzh
  */
 @Data
-public class Text implements Serializable {
+public class Text extends BaseMsg implements Serializable {
 
 
     /**
      * msgtype : text
      * text : {"content":"张三的请假申请"}
      */
-
-    private String msgtype;
+    private String msgtype = MsgTypeEnum.TEXT.getType();
     private TextBean text;
 
     @Data

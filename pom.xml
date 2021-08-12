@@ -6,7 +6,7 @@
 
     <groupId>com.bruce</groupId>
     <artifactId>zzd-sdk-java</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
 
     <properties>
         <java.version>1.8</java.version>

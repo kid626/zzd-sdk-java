@@ -1,5 +1,6 @@
 package com.bruce.zwdd.model.msg.req;
 
+import com.bruce.zwdd.enums.MsgTypeEnum;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -12,7 +13,7 @@ import java.io.Serializable;
  * @Author fzh
  */
 @Data
-public class Link implements Serializable {
+public class Link extends BaseMsg implements Serializable {
 
 
     /**
@@ -20,7 +21,7 @@ public class Link implements Serializable {
      * link : {"messageUrl":"http://s.dingtalk.com/market/dingtalk/error_code.php","picUrl":"@lALOACZwe2Rk","title":"测试","text":"测试"}
      */
 
-    private String msgtype;
+    private String msgtype = MsgTypeEnum.LINK.getType();
     private LinkBean link;
 
     @Data
@@ -31,7 +32,6 @@ public class Link implements Serializable {
          * title : 测试
          * text : 测试
          */
-
         private String messageUrl;
         private String picUrl;
         private String title;

@@ -120,5 +120,15 @@ public class URLConstant {
      */
     public static final String SEND_MESSAGE = "/message/workNotification";
 
+    /**
+     * 发送 DING 消息
+     */
+    public static final String SEND_DING = "/gov/ding/isv/send.json";
+
+    /**
+     * 发送消息
+     */
+    public static final String SEND_MSG = "/chat/sendMsg";
+
 
 }

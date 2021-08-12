@@ -1,6 +1,7 @@
 package com.bruce.zwdd.model.msg.req;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.bruce.zwdd.enums.MsgTypeEnum;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -14,7 +15,7 @@ import java.util.List;
  * @Author fzh
  */
 @Data
-public class Oa implements Serializable {
+public class Oa extends BaseMsg implements Serializable {
 
 
     /**
@@ -22,7 +23,7 @@ public class Oa implements Serializable {
      * oa : {"message_url":"http://dingtalk.com","head":{"bgcolor":"FFBBBBBB","text":"头部标题"},"body":{"title":"正文标题","form":[{"key":"姓名:","value":"张三"},{"key":"年龄:","value":"20"},{"key":"身高:","value":"1.8米"},{"key":"体重:","value":"130斤"},{"key":"学历:","value":"本科"},{"key":"爱好:","value":"打球、听音乐"}],"rich":{"num":"15.6","unit":"元"},"content":"大段文本大段文本大段文本大段文本大段文本大段文本大段文本大段文本大段文本大段文本大段文本大段文本","image":"@lADOADmaWMzazQKA","file_count":"3","author":"李四 "}}
      */
 
-    private String msgtype;
+    private String msgtype = MsgTypeEnum.OA.getType();
     private OaBean oa;
 
     @Data
@@ -35,6 +36,8 @@ public class Oa implements Serializable {
 
         @JSONField(name = "message_url")
         private String messageUrl;
+        @JSONField(name = "pc_message_url")
+        private String pcMessageUrl;
         private HeadBean head;
         private BodyBean body;
 

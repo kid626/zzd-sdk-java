@@ -2,7 +2,7 @@
 
 ```markdown
 浙政钉（专有钉钉）sdk java 版 
-VERSION : 1.2.0
+VERSION : 1.3.0
 ```
 
 ## 官方文档(需要登录) ##
@@ -11,9 +11,11 @@ VERSION : 1.2.0
 
 - [企业内应用免登](https://openplatform-portal.dg-work.cn/#/docs?apiType=serverapi&docKey=2674834)
 - [应用管理后台免登](https://openplatform-portal.dg-work.cn/#/docs?apiType=serverapi&docKey=2674932)
+- [DING](https://openplatform-portal.dg-work.cn/#/docs?apiType=serverapi&docKey=2674936)
 - [获取通讯录部门信息](https://openplatform-portal.dg-work.cn/#/docs?apiType=serverapi&docKey=2785626)
 - [获取通讯录用户信息](https://openplatform-portal.dg-work.cn/#/docs?apiType=serverapi&docKey=2674843)
 - [工作通知消息](https://openplatform-portal.dg-work.cn/#/docs?apiType=serverapi&docKey=2674860)
+- [消息](https://openplatform-portal.dg-work.cn/#/docs?apiType=serverapi&docKey=2674961)
 
 ## 引入方式 ##
 
@@ -41,19 +43,26 @@ public class XXXService {
 
 ## changelog #
 
-
 ### 1.0.0 ###
+
 ```text
 [function] 首次封装
 ```
 
-
 ### 1.1.0 ###
+
 ```text
 [function] 获取 jsapi_token 时支持使用自行管理的 access_token
 ```
 
 ### 1.2.0 ###
+
 ```text
 [function] 添加 根据组织Code查询组织汇报线 接口
+```
+
+### 1.3.0 ###
+
+```text
+[function] 添加 消息发送相关 接口并完成测试
 ```
